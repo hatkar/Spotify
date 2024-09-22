@@ -1,3 +1,7 @@
+
+#  ignore file for frontend
+
+
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
@@ -40,3 +44,9 @@ spotify/typings
 # System files
 spotify/.DS_Store
 spotify/Thumbs.db
+
+#  ignore file for backend
+
+
+#  ignore file for recap
+recap
