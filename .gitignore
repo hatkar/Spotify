@@ -1,0 +1,42 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+spotify/dist
+spotify/tmp
+spotify/out-tsc
+spotify/bazel-out
+
+# Node
+spotify/node_modules
+spotify/npm-debug.log
+spotify/yarn-error.log
+
+# IDEs and editors
+spotify/.idea/
+spotify/.project
+spotify/.classpath
+spotify/.c9/
+spotify/*.launch
+spotify/.settings/
+spotify/*.sublime-workspace
+
+# Visual Studio Code
+spotify/.vscode/*
+spotify/!.vscode/settings.json
+spotify/!.vscode/tasks.json
+spotify/!.vscode/launch.json
+spotify/!.vscode/extensions.json
+spotify/.history/*
+
+# Miscellaneous
+spotify/.angular/cache
+spotify/.sass-cache/
+spotify/connect.lock
+spotify/coverage
+spotify/libpeerconnection.log
+spotify/testem.log
+spotify/typings
+
+# System files
+spotify/.DS_Store
+spotify/Thumbs.db
