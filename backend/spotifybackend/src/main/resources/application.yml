@@ -1,0 +1,38 @@
+
+
+logging:
+  level:
+    ROOT: info
+    org.hibernate.SQL: DEBUG
+    com.hatkar.spotifybackend: DEBUG
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: spotify-back
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://${postgres_url}:5432/${postgres_db}
+    username: ${postgres_username}
+    password: ${postgres_password}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  #    drop-first: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+server:
+  port: 8081
