@@ -9,8 +9,7 @@ import lombok.*;
 @Entity
 @Table(name = "spotify_user")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class User extends AbstractAuditingEntity<Long> {
     @Getter
     @Setter
@@ -23,18 +22,18 @@ public class User extends AbstractAuditingEntity<Long> {
    // @NotEmpty
     @Getter
     @Setter
-    @Column(name="first_name")
+    @Column(name="first_name",nullable = false)
     private String firstName;
 
 
     //@NotEmpty
     @Getter
     @Setter
-    @Column(name="last_name")
+    @Column(name="last_name",nullable = false)
     private String lastName;
 
     //@NotEmpty
-    @Column(name = "email")
+    @Column(name = "email",nullable = false)
     @Email
     private String email;
 
