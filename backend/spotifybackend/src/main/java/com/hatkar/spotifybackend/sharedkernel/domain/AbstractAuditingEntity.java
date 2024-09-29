@@ -12,15 +12,14 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.io.Serializable;
 import java.time.Instant;
-@Data
-@Getter
-@Setter
+import java.util.Objects;
+
 //hibernate comprend que a la persistence de lune de deux entite il allimente ses 2 champs si besoin
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public abstract class AbstractAuditingEntity<T> implements Serializable {
 
-    //public abstract T getId();
+    public abstract T getId();
     @CreatedDate
     @Column(name = "Created_Date",updatable = false)
     private Instant CreateData = Instant.now();
@@ -28,5 +27,24 @@ public abstract class AbstractAuditingEntity<T> implements Serializable {
     @LastModifiedDate
     @Column(name = "LastModified")
     private Instant LastModified = Instant.now();
+
+
+
+    public Instant getCreateData() {
+        return CreateData;
+    }
+
+    public void setCreateData(Instant createData) {
+        CreateData = createData;
+    }
+
+    public Instant getLastModified() {
+        return LastModified;
+    }
+
+    public void setLastModified(Instant lastModified) {
+        LastModified = lastModified;
+    }
+
 
 }

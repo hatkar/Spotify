@@ -9,6 +9,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @EnableJpaAuditing
 @EnableJpaRepositories({"com.hatkar.spotifybackend.catalogueContext.Repository",
-        "com.hatkar.spotifybackend.usercontext.domain"})
+        "com.hatkar.spotifybackend.usercontext.repository"})
 public class DatabaseConfiguration {
 }

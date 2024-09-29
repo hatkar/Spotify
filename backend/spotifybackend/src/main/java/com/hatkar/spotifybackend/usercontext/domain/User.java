@@ -8,11 +8,10 @@ import lombok.*;
 
 @Entity
 @Table(name = "spotify_user")
-@Data
+
 
 public class User extends AbstractAuditingEntity<Long> {
-    @Getter
-    @Setter
+
     @Id
     @GeneratedValue( strategy = GenerationType.SEQUENCE,generator = "userSequenceGen")
     @SequenceGenerator(name = "userSequenceGenerator", sequenceName = "user_generator", allocationSize = 1)
@@ -20,15 +19,13 @@ public class User extends AbstractAuditingEntity<Long> {
     private Long id;
 
    // @NotEmpty
-    @Getter
-    @Setter
+
     @Column(name="first_name",nullable = false)
     private String firstName;
 
 
     //@NotEmpty
-    @Getter
-    @Setter
+
     @Column(name="last_name",nullable = false)
     private String lastName;
 
@@ -37,11 +34,9 @@ public class User extends AbstractAuditingEntity<Long> {
     @Email
     private String email;
 
-    @Getter
-    @Setter
+
     private String imageUrl;
-    @Getter
-    @Setter
+
     private Subscription subscription = Subscription.FREE;
 
     public User(Long id, String firstName, String lastName, String email, String imageUrl, Subscription subscription) {
@@ -54,6 +49,46 @@ public class User extends AbstractAuditingEntity<Long> {
     }
 
     public User() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public Subscription getSubscription() {
+        return subscription;
+    }
+
+    public void setSubscription(Subscription subscription) {
+        this.subscription = subscription;
     }
 
     public @Email String getEmail() {
